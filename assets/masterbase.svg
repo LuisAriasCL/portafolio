@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f0ebe4"/>
+  <text x="400" y="220" text-anchor="middle" font-family="serif" font-size="42" fill="#c4a882" opacity="0.4">創造</text>
+  <text x="400" y="265" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#8a8578" letter-spacing="3">FLEX CREATOR · MASTERBASE</text>
+  <line x1="340" y1="285" x2="460" y2="285" stroke="#c4a882" stroke-width="0.5" opacity="0.3"/>
+</svg>

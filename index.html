@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Arias | Ingeniero en Informática</title>
+    <meta name="description" content="Portafolio profesional de Luis Arias Cabello. Ingeniero en Informática especializado en desarrollo Full Stack con Node.js, React, Angular y bases de datos.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <span class="loader-text">&lt;/&gt;</span>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Luis<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Inicio</a></li>
+                <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="#experience" class="nav-link">Experiencia</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                <span class="theme-icon-light">日</span>
+                <span class="theme-icon-dark">月</span>
+            </button>
+        </div>
+    </nav>
+    <div class="scroll-progress" id="scroll-progress">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+        <div class="scroll-progress-sections">
+            <span class="scroll-kanji" data-section="hero">空</span>
+            <span class="scroll-kanji" data-section="about">人</span>
+            <span class="scroll-kanji" data-section="skills">技</span>
+            <span class="scroll-kanji" data-section="projects">作</span>
+            <span class="scroll-kanji" data-section="experience">道</span>
+            <span class="scroll-kanji" data-section="contact">縁</span>
+        </div>
+    </div>
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <canvas class="ink-canvas" id="ink-canvas"></canvas>
+            <div class="hero-grid"></div>
+            <div class="hero-glow"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Disponible para trabajar
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hola, soy</span>
+                <span class="hero-name">Luis Arias</span>
+                <span class="hero-role">
+                    <span class="typed-text" id="typed-text"></span>
+                    <span class="typed-cursor">|</span>
+                </span>
+            </h1>
+            <p class="hero-description">
+                Ingeniero en Informática con experiencia en el ciclo completo 
+                del desarrollo de soluciones tecnológicas. Transformo requerimientos 
+                de negocio en aplicaciones funcionales y escalables.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span>Ver Proyectos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Contactar</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Años de Experiencia</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Proyectos Completados</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="42">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Labs GCP Completados</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-indicator">
+                <span></span>
+                <div class="scroll-line"></div>
+            </a>
+        </div>
+        <div class="hero-socials">
+            <a href="https://github.com/luisariascl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/luis-arias-cabello-760787224" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </section>
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">&lt;sobre-mí&gt;</span>
+                <h2 class="section-title">Conóceme</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image" data-animate>
+                    <div class="about-image-wrapper">
+                        <img src="assets/perfil.png" alt="Luis Arias Cabello" class="about-photo" loading="lazy">
+                        <div class="about-image-border"></div>
+                    </div>
+                </div>
+                <div class="about-content" data-animate>
+                    <h3 class="about-subtitle">
+                        Ingeniero en Informática con enfoque Full Stack
+                    </h3>
+                    <p>
+                        Egresado de Ingeniería en Informática con experiencia en el ciclo completo 
+                        del desarrollo de soluciones tecnológicas. Poseo sólidos conocimientos en 
+                        desarrollo de software, administración de bases de datos relacionales y 
+                        gestión de infraestructura TI.
+                    </p>
+                    <p>
+                        He liderado proyectos creando aplicaciones de gestión eficientes y escalables, 
+                        con experiencia en la implementación de procesos automatizados. Mi enfoque es 
+                        transformar los requerimientos del negocio en soluciones funcionales, optimizando 
+                        el rendimiento y mejorando la experiencia del usuario.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Concepción, Chile</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Ing. en Informática · Duoc UC (Titulado con Distinción)</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-language"></i>
+                            <span>Español (Nativo) · Inglés (B2 - TOEIC)</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-cloud"></i>
+                            <span>Google Cloud Platform · 42 Labs</span>
+                        </div>
+                    </div>
+                    <a href="assets/Cv Luis Arias C.pdf" class="btn btn-primary" download>
+                        <span>Descargar CV</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+            <span class="section-tag-close" data-animate>&lt;/sobre-mí&gt;</span>
+        </div>
+    </section>
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">Tecnologías & Herramientas</h2>
+            </div>
+            <div class="skills-orbit" data-animate>
+                <div class="orbit-core">
+                    <span class="orbit-kanji">技</span>
+                    <span class="orbit-label">Full Stack</span>
+                </div>
+                <div class="orbit-ring orbit-ring--inner">
+                    <div class="orbit-node" style="--angle: 0deg; --delay: 0s;">
+                        <i class="fab fa-js"></i><span>JavaScript</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 51deg; --delay: 0.1s;">
+                        <i class="fab fa-node-js"></i><span>Node.js</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 103deg; --delay: 0.2s;">
+                        <i class="fab fa-react"></i><span>React</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 154deg; --delay: 0.3s;">
+                        <i class="fab fa-angular"></i><span>Angular</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 206deg; --delay: 0.4s;">
+                        <i class="fas fa-code"></i><span>TypeScript</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 257deg; --delay: 0.5s;">
+                        <i class="fab fa-python"></i><span>Python</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 308deg; --delay: 0.6s;">
+                        <i class="fas fa-database"></i><span>PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="orbit-ring orbit-ring--outer">
+                    <div class="orbit-node" style="--angle: 15deg; --delay: 0s;">
+                        <i class="fas fa-bolt"></i><span>Express</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 42deg; --delay: 0.08s;">
+                        <i class="fas fa-wind"></i><span>Tailwind</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 69deg; --delay: 0.16s;">
+                        <i class="fas fa-mobile-alt"></i><span>Ionic</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 96deg; --delay: 0.24s;">
+                        <i class="fab fa-react"></i><span>React Native</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 123deg; --delay: 0.32s;">
+                        <i class="fas fa-leaf"></i><span>MongoDB</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 150deg; --delay: 0.4s;">
+                        <i class="fas fa-database"></i><span>MySQL</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 177deg; --delay: 0.48s;">
+                        <i class="fas fa-database"></i><span>MariaDB</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 204deg; --delay: 0.56s;">
+                        <i class="fas fa-database"></i><span>Oracle DB</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 231deg; --delay: 0.64s;">
+                        <i class="fas fa-layer-group"></i><span>Prisma</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 258deg; --delay: 0.72s;">
+                        <i class="fab fa-php"></i><span>PHP</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 285deg; --delay: 0.8s;">
+                        <i class="fab fa-docker"></i><span>Docker</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 312deg; --delay: 0.88s;">
+                        <i class="fab fa-aws"></i><span>AWS</span>
+                    </div>
+                    <div class="orbit-node" style="--angle: 339deg; --delay: 0.96s;">
+                        <i class="fab fa-google"></i><span>GCP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-list" data-animate>
+                <div class="skills-list-group">
+                    <h3 class="skills-list-title">Frontend</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">JavaScript ES6+</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Ionic</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                    </div>
+                </div>
+                <div class="skills-list-group">
+                    <h3 class="skills-list-title">Backend & Bases de Datos</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">Python / Django</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MariaDB</span>
+                        <span class="skill-tag">Oracle Database</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Prisma / Sequelize</span>
+                    </div>
+                </div>
+                <div class="skills-list-group">
+                    <h3 class="skills-list-title">DevOps & Herramientas</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Socket.io</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Microsoft 365</span>
+                    </div>
+                </div>
+            </div>
+
+            <span class="section-tag-close" data-animate>&lt;/skills&gt;</span>
+        </div>
+    </section>
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">&lt;proyectos&gt;</span>
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <p class="section-subtitle">Una selección de mis trabajos más recientes y relevantes</p>
+            </div>
+            <div class="projects-filters" data-animate>
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="mobile">Móvil / Híbrida</button>
+            </div>
+            <div class="projects-grid" data-animate>
+                <article class="project-card featured" data-category="fullstack">
+                    <div class="project-image">
+                        <div class="project-featured-badge">
+                            <i class="fas fa-star"></i> En Producción
+                        </div>
+                        <img src="assets/pagina thingo.png" alt="TingGo - Marketplace P2P" class="project-photo" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://tinggoapp.cl" target="_blank" rel="noopener" class="project-link" aria-label="Ver sitio en vivo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/luisariascl" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <button class="gallery-thumb active" data-img="assets/pagina thingo.png"><img src="assets/pagina thingo.png" alt="Página principal" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/objetos tingo.png"><img src="assets/objetos tingo.png" alt="Objetos" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/publicar articulo thingo.png"><img src="assets/publicar articulo thingo.png" alt="Publicar artículo" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/login thingo.png"><img src="assets/login thingo.png" alt="Login" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/moderacion thingo.png"><img src="assets/moderacion thingo.png" alt="Moderación" loading="lazy"></button>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Full Stack · Sercotec · <a href="https://tinggoapp.cl" target="_blank" rel="noopener" class="project-live-link">tinggoapp.cl ↗</a></span>
+                        <h3 class="project-title">TingGo — Marketplace P2P de Arriendo</h3>
+                        <p class="project-description">
+                            Plataforma en producción para el arriendo de objetos entre personas. 
+                            Sistema completo con publicación de artículos, búsqueda por categorías, 
+                            sistema de garantías, coordinación de entregas, reseñas y autenticación 
+                            segura con JWT. API REST robusta con Node.js y Express.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Vite</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
+                            <span>Prisma</span>
+                            <span>Tailwind</span>
+                            <span>JWT</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <img src="assets/gestion de flota dashboard.png" alt="Sistema de Gestión de Flotas" class="project-photo" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/luisariascl" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <button class="gallery-thumb active" data-img="assets/gestion de flota dashboard.png"><img src="assets/gestion de flota dashboard.png" alt="Dashboard" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/gestion de flota panel autos.png"><img src="assets/gestion de flota panel autos.png" alt="Panel autos" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/creacion de rutas  gestion de flota.png"><img src="assets/creacion de rutas  gestion de flota.png" alt="Creación de rutas" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/generacion automatica de ruteo  gestion de flota.png"><img src="assets/generacion automatica de ruteo  gestion de flota.png" alt="Ruteo automático" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/conductor gestion de flota.png"><img src="assets/conductor gestion de flota.png" alt="Conductor" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/ot de gestion de flota.png"><img src="assets/ot de gestion de flota.png" alt="Órdenes de trabajo" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/tecnicos gestor flota.png"><img src="assets/tecnicos gestor flota.png" alt="Técnicos" loading="lazy"></button>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Full Stack · Proyecto de Título</span>
+                        <h3 class="project-title">Sistema de Gestión de Flotas</h3>
+                        <p class="project-description">
+                            Sistema integral con comunicación en tiempo real vía Socket.io, 
+                            app móvil híbrida con Leaflet para geolocalización y Chart.js 
+                            para dashboards analíticos.
+                        </p>
+                        <div class="project-tech">
+                            <span>Ionic</span>
+                            <span>Angular</span>
+                            <span>Node.js</span>
+                            <span>Sequelize</span>
+                            <span>Socket.io</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <img src="assets/biblioteca.svg" alt="Gestión de Biblioteca" class="project-photo" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/luisariascl" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Móvil / Híbrida</span>
+                        <h3 class="project-title">Gestión de Biblioteca</h3>
+                        <p class="project-description">
+                            Aplicación de gestión de biblioteca con sistema de préstamos, 
+                            catálogo de libros y panel de administración. 
+                            Interfaz móvil híbrida multiplataforma.
+                        </p>
+                        <div class="project-tech">
+                            <span>Ionic</span>
+                            <span>Angular</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card" data-category="fullstack">
+                    <div class="project-image">
+                        <img src="assets/masterbase.png" alt="Flex Creator - Masterbase" class="project-photo" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/luisariascl" target="_blank" rel="noopener" class="project-link" aria-label="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-gallery">
+                        <button class="gallery-thumb active" data-img="assets/masterbase.png"><img src="assets/masterbase.png" alt="Masterbase" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/masterbase 3.png"><img src="assets/masterbase 3.png" alt="Masterbase 3" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/masterbase 4.png"><img src="assets/masterbase 4.png" alt="Masterbase 4" loading="lazy"></button>
+                        <button class="gallery-thumb" data-img="assets/llegada de correo masterbase.png"><img src="assets/llegada de correo masterbase.png" alt="Llegada de correo" loading="lazy"></button>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Flex Partner · Masterbase</span>
+                        <h3 class="project-title">Flex Creator</h3>
+                        <p class="project-description">
+                            Trabajo como Flex Partner en Masterbase, creando soluciones 
+                            con MongoDB y JSON para plataformas de marketing 
+                            y automatización de datos.
+                        </p>
+                        <div class="project-tech">
+                            <span>MongoDB</span>
+                            <span>JSON</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <span class="section-tag-close" data-animate>&lt;/proyectos&gt;</span>
+        </div>
+    </section>
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">&lt;experiencia&gt;</span>
+                <h2 class="section-title">Experiencia & Educación</h2>
+            </div>
+            <div class="timeline" data-animate>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Sep - Dic 2025</span>
+                            <span class="timeline-badge">Freelance</span>
+                        </div>
+                        <h3>Desarrollador Full Stack</h3>
+                        <h4>Sercotec · Freelance</h4>
+                        <p>Desarrollo integral de "ThingGo", marketplace P2P para arriendo de objetos. 
+                           Construcción de API REST con Node.js, Express y TypeScript, autenticación 
+                           con JWT y bcryptjs, base de datos PostgreSQL con Prisma ORM y frontend 
+                           con React, TypeScript y Tailwind CSS.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">May - Jul 2025</span>
+                            <span class="timeline-badge">Trabajo</span>
+                        </div>
+                        <h3>Flex Creator (Flex Partner)</h3>
+                        <h4>Masterbase</h4>
+                        <p>Creación de soluciones con MongoDB y JSON para plataformas 
+                           de marketing y automatización de datos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Mar - Jul 2025</span>
+                            <span class="timeline-badge">Capstone</span>
+                        </div>
+                        <h3>Desarrollador Full Stack</h3>
+                        <h4>Capstone · Concepción</h4>
+                        <p>Sistema integral de gestión de flota con Ionic y Angular. 
+                           API REST con Node.js, Express y Sequelize. Comunicación en tiempo 
+                           real vía Socket.io, geolocalización con Leaflet y dashboards con Chart.js.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Ene - Feb 2024</span>
+                            <span class="timeline-badge">Trabajo</span>
+                        </div>
+                        <h3>Soporte TI · Admin BD · Microsoft 365</h3>
+                        <h4>NiceBlue / Veal SPA</h4>
+                        <p>Soporte técnico en TI, administración de bases de datos y Microsoft 365. 
+                           Desarrollo de formularios dinámicos SmartView con lógica condicional 
+                           para Corredoras de Propiedades. Configuración de servidores endpoint y switches.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">2025</span>
+                            <span class="timeline-badge education">Educación</span>
+                        </div>
+                        <h3>Ingeniería en Informática</h3>
+                        <h4>Duoc UC · San Andrés de Concepción</h4>
+                        <p>Titulado con 2 votos de distinción. Formación en desarrollo de software, 
+                           bases de datos, algoritmos y arquitectura de sistemas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">2024</span>
+                            <span class="timeline-badge education">Certificación</span>
+                        </div>
+                        <h3>Google Cloud Platform (GCP)</h3>
+                        <h4>Google Lab Course · 42 Labs</h4>
+                        <p>IAM, Dataflow, Looker Studio, Bigtable, Cloud Functions, 
+                           Cloud Pub/Sub, Cloud Shell, Compute Engine, BigQuery.</p>
+                    </div>
+                </div>
+            </div>
+            <span class="section-tag-close" data-animate>&lt;/experiencia&gt;</span>
+        </div>
+    </section>
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">&lt;contacto&gt;</span>
+                <h2 class="section-title">¡Hablemos!</h2>
+                <p class="section-subtitle">
+                    ¿Tienes un proyecto en mente o simplemente quieres saludar? 
+                    No dudes en contactarme.
+                </p>
+            </div>
+            <div class="contact-grid" data-animate>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Email</h3>
+                            <a href="mailto:lu.arias@duocuc.cl">lu.arias@duocuc.cl</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/luis-arias-cabello-760787224" target="_blank" rel="noopener">Luis Arias Cabello</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/luisariascl" target="_blank" rel="noopener">github.com/luisariascl</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Ubicación</h3>
+                            <span>Concepción, Chile</span>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h3>Teléfono</h3>
+                            <a href="tel:+56935240607">+56 9 3524 0607</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required placeholder=" ">
+                        <label for="subject">Asunto</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Mensaje</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Enviar Mensaje</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+            <span class="section-tag-close" data-animate>&lt;/contacto&gt;</span>
+        </div>
+    </section>
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="lightbox-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>Luis Arias<span class="logo-bracket">/&gt;</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/luisariascl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/luis-arias-cabello-760787224" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:lu.arias@duocuc.cl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-text">
+                    
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
